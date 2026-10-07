@@ -1,0 +1,64 @@
+.social {
+  position: relative;
+  overflow: hidden;
+  background: var(--black);
+  color: #f3ede4;
+  padding: clamp(90px, 14vh, 150px) var(--gutter) calc(40px + env(safe-area-inset-bottom));
+}
+.social__title {
+  margin: 14px 0 0;
+  font-weight: 400;
+  font-size: clamp(3rem, 8vw, 8rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.social__title .script { color: var(--red); font-size: 1.15em; }
+.social__title .serif { font-style: italic; }
+
+.social__list { list-style: none; margin: clamp(40px, 7vh, 80px) 0 0; padding: 0; }
+.social__list li { border-top: 1px solid rgba(243, 237, 228, 0.16); }
+.social__list li:last-child { border-bottom: 1px solid rgba(243, 237, 228, 0.16); }
+.social__link {
+  display: grid;
+  grid-template-columns: minmax(10rem, 0.6fr) 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: clamp(18px, 3vw, 34px) 0;
+  text-decoration: none;
+  transition: padding 0.5s cubic-bezier(0.2, 0.7, 0.2, 1), color 0.4s;
+}
+.social__label { opacity: 0.6; }
+.social__handle {
+  font-size: clamp(2rem, 6vw, 5.5rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-style: italic;
+}
+.social__arrow {
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
+  transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+@media (hover: hover) {
+  .social__link:hover { padding-left: 2vw; color: var(--red); }
+  .social__link:hover .social__arrow { transform: translate(6px, -6px) rotate(8deg); }
+}
+
+.social__end {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: clamp(50px, 9vh, 100px);
+}
+.social__cats { width: min(420px, 52vw); height: auto; }
+.social__sign { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; padding-bottom: 1rem; }
+.social__sign .script { font-size: clamp(2.6rem, 5vw, 4.6rem); line-height: 1; }
+.social__sign .kicker { opacity: 0.5; }
+
+@media (max-width: 760px) {
+  .social__link { grid-template-columns: 1fr auto; row-gap: 6px; }
+  .social__label { grid-column: 1 / -1; }
+  .social__end { flex-direction: column; align-items: flex-start; }
+  .social__cats { width: 78vw; }
+  .social__sign { align-items: flex-start; }
+}
